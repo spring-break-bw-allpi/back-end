@@ -1,19 +1,206 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <title>API Mountain ^^^</title>
-  </head>
-  <body></body>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-app.js"></script>
 
-  <!-- TODO: Add SDKs for Firebase products that you want to use
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Baloo+Tamma+2|Handlee|Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>API Mountain ^/\^/\^</title>
+</head>
+
+<body >
+
+   <!-- NAVBAR -->
+
+   <nav class="main-nav z-depth-0 transparent" >
+    
+    <div class="wrapper">
+    
+      <ul id="nav" class="nav navbar-nav">
+       
+        
+      
+        <li class="lihome">
+          <a href="/index.html" class="black-text">Home</a>
+        </li>
+        
+        
+          <li class="liaccount logged-in" style="display: none;">
+            <a href="#" class="black-text modal-trigger" data-target="modal-account">Account</a>
+          </li>
+          <li class="lilogout logged-in" style="display: none;">
+            <a href="#" class="black-text" id="logout">Logout</a>
+          </li>
+          <li class="linewapi logged-in" style="display: none;">
+            <a href="#" class="black-text modal-trigger" data-target="modal-create">New API entry</a>
+          </li>
+          <li class="lilogin logged-out" style="display: none;">
+            <a href="#" class="black-text modal-trigger" data-target="modal-login">Login</a>
+          </li>
+          <li class="lisignup logged-out" style="display: none;">
+            <a href="#" class="black-text modal-trigger" data-target="modal-signup">Sign up</a>
+          </li>
+        </span>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+
+
+    <!-- SIGN UP MODAL -->
+    <div id="modal-signup" class="modal transparent z-depth-5"  style="border: 1px white solid; padding: 1%;">
+        <div class="modal-content">
+            <h4 style="color:white;">Sign up</h4><br />
+            <form id="signup-form">
+                <div class="input-field">
+                    <input type="email" id="signup-email" required />
+                    <label for="signup-email">Email address</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="username" required />
+                    <label for="username">Enter Username</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="signup-password" required />
+                    <label for="signup-password">Choose password</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="signup-bio" required />
+                    <label for="signup-bio">One Line Bio</label>
+                </div>
+                <button class="btn blue darken-2 z-depth-0">Sign up</button>
+                <p class="error pink-text center-align"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div id="modal-login" class="modal transparent z-depth-5"  style="border: 1px white solid; padding: 1%;">
+        <div class="modal-content">
+            <h4 style="color:white;">Login</h4><br />
+            <form id="login-form">
+                <div class="input-field">
+                    <input type="email" id="login-email" required />
+                    <label for="login-email">Email address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="login-password" required />
+                    <label for="login-password">Your password</label>
+                </div>
+                <button class="btn blue darken-2 z-depth-0">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ACCOUNT MODAL -->
+    <div id="modal-account" class="modal transparent z-depth-5"  style="border: 1px white solid; padding: 1%;">
+        <div class="modal-content center-align white-text">
+            <h4>Account details</h4><br />
+            <div class="account-details"></div>
+        </div>
+    </div>
+
+    <!-- CREATE API MODAL -->
+    <div id="modal-create" class="modal">
+        <div class="modal-content blue lighten-4 ">
+            <h4>Create New API Entry</h4><br />
+            <form id="create-form">
+                <h5>API Name </h5>
+                <div class="input-field ">
+                    <input type="text" id="title" required>
+                    <label for="title">A simplified API name or description</label>
+                </div>
+                <div class="input-field ">
+                    <input type="text" id="address" required>
+                    <label for="address">Please paste the  URL for the api</label>
+                </div>
+                <div class="input-field ">
+                    <input type="text" id="access" required>
+                    <label for="access">What kind of access does it have? Free? Free with registration? Paid?</label>
+                </div>
+                <div class="input-field ">
+                    <input type="text" id="instructions" required>
+                    <label for="access">Any special instructions or comments for using this API?</label>
+                </div>
+                                 <div class="input-field" style="display:none;">
+                                     <input type="number" id="likes" placeholder="1">
+                                 </div>             
+                
+                <button class="btn red darken-2 z-depth-0">Create</button>
+            </form>
+        </div>
+    </div>
+<!-- API list -->
+
+    <div class="apilist" style="margin-top: 40px; ">
+        <ul class="z-depth-0 guides" style="border: none;
+         font-family:'Baloo Tamma 2', cursive; letter-spacing: 1px;">
+
+        </ul>
+    </div>
+</div>
+   <!-- ADMIN ACTIONS -->
+   <div class="adminForm">
+    <form class="adminForm center-align admin-actions " style="margin-left: 25%; margin-bottom: 2%; max-width: 300px; ">
+      <input type="email" placeholder="User email" id="admin-email" required />
+      <button class="btn-small red darken-2 z-depth-0">Make admin</button>
+    </form>
+  </div>
+  
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-functions.js"></script>
 
-  <script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCiSQR30E0xGyWaiQg2biHFemApoe7lZzU",
+      authDomain: "apimountain-c959a.firebaseapp.com",
+      databaseURL: "https://apimountain-c959a.firebaseio.com",
+      projectId: "apimountain-c959a",
+      storageBucket: "apimountain-c959a.appspot.com",
+      messagingSenderId: "725878927812",
+      appId: "1:725878927812:web:fa81d68a77429a0c313491",
+      measurementId: "G-97ZHKB8EQ5"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // ^^^^^^ might be a problem ^^^^^^
+
+        // firebase.analytics();
+        // make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore()
+        const functions = firebase.functions();
+
+        // update firestore settings
+
+
+
+
+    </script>
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="./index.js"></script>
+    
+</body>
+
+</html>
+<script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
       apiKey: "AIzaSyCiSQR30E0xGyWaiQg2biHFemApoe7lZzU",
@@ -29,4 +216,3 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
   </script>
-</html>
