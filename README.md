@@ -29,6 +29,8 @@ Admins will not have the ability to delete user accounts.
 ** STRETCH ** 
 Give users the ability to down vote, 
 -Sort APIs by downvote
+
+
 Give users the ability to have a personal top 10 favorite APIs.
 - Possibly under an accounts details kind of modal? They can save the name or address under their account name, or at least link its collection to their username.
 
