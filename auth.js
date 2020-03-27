@@ -69,7 +69,9 @@ signupForm.addEventListener("submit", e => {
         .collection("users")
         .doc(cred.user.uid)
         .set({
-          bio: signupForm["signup-bio"].value
+          bio: signupForm["signup-bio"].value,
+          username: signupForm["username"].value,
+          email: signupForm["signup-email"].value
         });
     })
     .then(() => {

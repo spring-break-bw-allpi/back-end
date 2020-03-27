@@ -17,6 +17,7 @@ const setupUI = user => {
       .then(doc => {
         const html = `
         <div>Logged in as ${user.email}</div>
+        <div>${doc.data().username}</div>
         <div>${doc.data().bio}</div>
         <div class="red-text">${user.admin ? "Admin" : ""}</div>
       `;
@@ -53,7 +54,7 @@ const setupGuides = data => {
     });
     guideList.innerHTML = html;
   } else {
-    guideList.innerHTML = '<h5 class="center-align">Log in to view Blog</h5>';
+    guideList.innerHTML = '<h5 class="center-align">Log in to view APIs</h5>';
   }
 };
 
