@@ -10,8 +10,10 @@ Api Mountain will have a login system connected to a firestore database. This wi
 
 Non User experience :
 non users will be able to visit the website and search APIs and *maybe* be able to upvote them. 
+
 Logged In User experience : 
 Logged in users will be able to submit an API and be able to upvote.
+
 Users will be asked for login info:
 -Email
 -PassWord
