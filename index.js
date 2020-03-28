@@ -45,7 +45,7 @@ const setupGuides = data => {
       const li = `
         <li>
           <div class=" grey lighten-2 " "> ${guide.title}, + ${guide.likes} likes</div>
-          <div class=" grey lighten-4"> ${guide.address} </div>
+          <div class=" grey lighten-4"> <a href="${guide.address}" target='_blank'>${guide.address}</a> </div>
           <div class=" grey lighten-4"> ${guide.access} </div>
           <div class=" grey lighten-4"> ${guide.instructions} </div>
         </li>
