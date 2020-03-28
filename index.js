@@ -54,7 +54,7 @@ const setupGuides = data => {
     });
     guideList.innerHTML = html;
   } else {
-    guideList.innerHTML = '<h5 class="">Log in to view APIs</h5>';
+    guideList.innerHTML = '<h5 class="">Refresh to view APIs</h5>';
   }
 };
 

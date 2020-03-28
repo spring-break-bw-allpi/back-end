@@ -32,7 +32,6 @@ auth.onAuthStateChanged(user => {
     );
   } else {
     setupUI();
-    setupGuides([]);
   }
 });
 
