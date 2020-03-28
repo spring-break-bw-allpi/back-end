@@ -1,3 +1,10 @@
+db.collection("apis")
+  .get()
+  .then(snapshot => {
+    console.log(snapshot.docs);
+    setupGuides(snapshot.docs);
+  });
+
 // add admin cloud function
 const adminForm = document.querySelector(".admin-actions");
 adminForm.addEventListener("submit", e => {
