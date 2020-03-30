@@ -5,6 +5,37 @@ const loggedInLinks = document.querySelectorAll(".logged-in");
 const accountDetails = document.querySelector(".account-details");
 const adminItems = document.querySelectorAll(".admin");
 
+// vue stuff
+var app = new Vue({
+  el: "#app",
+  data: {
+    requests: []
+  },
+  methods: {
+    upvoteRequest(id) {
+      //console.log(id);
+      const upvote = firebase.functions().httpsCallable("upvote");
+      upvote({ id }).catch(error => {
+        console.log(error.message);
+      });
+    }
+  },
+  mounted() {
+    const ref = firebase
+      .firestore()
+      .collection("apis")
+      .orderBy("upvotes", "desc");
+    ref.onSnapshot(snapshot => {
+      let requests = [];
+      snapshot.forEach(doc => {
+        requests.push({ ...doc.data(), id: doc.id });
+      });
+      this.requests = requests;
+    });
+  }
+});
+//
+
 const setupUI = user => {
   if (user) {
     if (user.admin) {
@@ -17,9 +48,10 @@ const setupUI = user => {
       .then(doc => {
         const html = `
         <div>Logged in as ${user.email}</div>
-        <div>${doc.data().username}</div>
-        <div>${doc.data().bio}</div>
+        <div>Username: ${doc.data().username}</div>
+        <div>Bio: ${doc.data().bio}</div>
         <div class="red-text">${user.admin ? "Admin" : ""}</div>
+        
       `;
         accountDetails.innerHTML = html;
       });
@@ -33,28 +65,6 @@ const setupUI = user => {
     // toggle user elements
     loggedInLinks.forEach(item => (item.style.display = "none"));
     loggedOutLinks.forEach(item => (item.style.display = "block"));
-  }
-};
-
-// setup guides
-const setupGuides = data => {
-  if (data.length) {
-    let html = "";
-    data.forEach(doc => {
-      const guide = doc.data();
-      const li = `
-        <li>
-          <div class=" grey lighten-2 " "> ${guide.title}, + ${guide.likes} likes</div>
-          <div class=" grey lighten-4"> <a href="${guide.address}" target='_blank'>${guide.address}</a> </div>
-          <div class=" grey lighten-4"> ${guide.access} </div>
-          <div class=" grey lighten-4"> ${guide.instructions} </div>
-        </li>
-      `;
-      html += li;
-    });
-    guideList.innerHTML = html;
-  } else {
-    guideList.innerHTML = '<h5 class="">Refresh to view APIs</h5>';
   }
 };
 

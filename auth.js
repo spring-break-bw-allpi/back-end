@@ -45,7 +45,7 @@ createForm.addEventListener("submit", e => {
       address: createForm.address.value,
       access: createForm.access.value,
       instructions: createForm.instructions.value,
-      likes: createForm.likes.value
+      upvotes: 0
     })
     .then(() => {
       // close the create modal & reset form
@@ -77,7 +77,8 @@ signupForm.addEventListener("submit", e => {
         .set({
           bio: signupForm["signup-bio"].value,
           username: signupForm["username"].value,
-          email: signupForm["signup-email"].value
+          email: signupForm["signup-email"].value,
+          upvotedOn: []
         });
     })
     .then(() => {

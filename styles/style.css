@@ -1,1 +1,52 @@
+/* mini reset */
+body {
+  margin: 0;
+  background: teal;
+}
+body,
+h1,
+h2,
+p,
+a,
+input {
+  color: #555;
 
+  text-decoration: none;
+}
+
+/* content styles */
+.content {
+  max-width: 90%;
+  margin: 40px auto 0;
+}
+
+/* api list styles */
+.api-list li {
+  padding: 1%;
+  margin-bottom: 1%;
+  list-style-type: none;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+.titleSection {
+  display: flex;
+  justify-content: space-between;
+}
+.bottomSection {
+  display: flex;
+  flex-direction: column;
+}
+.api-list .votes {
+  position: relative;
+  top: -5px;
+  z-index: 0;
+}
+.api-list .upvote {
+  cursor: pointer;
+  border-radius: 50%;
+}
+.api-list .upvote:active {
+  color: green;
+  background: green;
+}

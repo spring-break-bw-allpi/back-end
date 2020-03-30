@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Acme|Baloo+Tamma+2|Handlee|Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>API Mountain ^/\^/\^</title>
@@ -137,14 +138,30 @@
         </div>
     </div>
 <!-- API list -->
+<section class="content" id="app">
+    <h2>API LIST</h2>
+    <ul class="api-list"> 
+      <li v-for="request in requests">
+         
+          <div class="titleSection">
 
-    <div class="apilist" style="margin-top: 40px; ">
-        <ul class="z-depth-0 guides" style="border: none;
-         font-family:'Baloo Tamma 2', cursive; letter-spacing: 1px;">
+        <span class="text">Name: {{ request.title }}</span>
 
-        </ul>
+        <div class="upvoteSection">
+            <span class="votes" style="font-size: 20px;">{{ request.upvotes }}Likes</span> 
+            <i class="material-icons upvote" v-on:click="upvoteRequest(request.id)" style="color:rgb(14, 245, 14); background-color: rgb(107, 104, 104);">arrow_upward</i>
+          </div>
+
+        </div>
+    <div class="bottomSection">
+
+        <p>{{request.address}}</p>
+        <span class="access">Access: {{ request.access}}</span>
+        <span class="instructions">Notes: {{ request.instructions}}</span>
     </div>
-</div>
+      </li>
+    </ul>
+  </section>
    <!-- ADMIN ACTIONS -->
    <div class="adminForm">
     <form class="adminForm center-align admin-actions admin" style="margin-left: 25%; margin-bottom: 2%; max-width: 300px; display: none;">
@@ -152,6 +169,13 @@
       <button class="btn-small red darken-2 z-depth-0">Make admin</button>
     </form>
   </div>
+
+
+  <!--  VUE INFO BELOW  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+
   
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-app.js"></script>
