@@ -47,7 +47,7 @@ createForm.addEventListener("submit", e => {
       instructions: createForm.instructions.value,
       upvotes: 0,
       downvotes: 0
-    }) // this is where you could add a downvote option
+    })
     .then(() => {
       // close the create modal & reset form
       const modal = document.querySelector("#modal-create");

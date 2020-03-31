@@ -67,3 +67,45 @@ exports.upvote = functions.https.onCall((data, context) => {
       });
   });
 });
+
+//  DOWN vote system
+exports.downvote = functions.https.onCall((data, context) => {
+  // check auth state
+  if (!context.auth) {
+    throw new functions.https.HttpsError(
+      "unauthenticated",
+      "only authenticated users can down vote requests"
+    );
+  }
+  // get refs for user doc & request doc
+  const user = admin
+    .firestore()
+    .collection("users")
+    .doc(context.auth.uid);
+  const api = admin
+    .firestore()
+    .collection("apis")
+    .doc(data.id);
+
+  return user.get().then(doc => {
+    // check thew user hasn't already upvoted
+    if (doc.data().downvotedOn.includes(data.id)) {
+      throw new functions.https.HttpsError(
+        "failed-precondition",
+        "You can only vote something down once"
+      );
+    }
+
+    // update the array in user document
+    return user
+      .update({
+        downvotedOn: [...doc.data().downvotedOn, data.id]
+      })
+      .then(() => {
+        // update the votes on the api
+        return api.update({
+          downvotes: admin.firestore.FieldValue.increment(1)
+        });
+      });
+  });
+});
