@@ -18,8 +18,15 @@ var app = new Vue({
       upvote({ id }).catch(error => {
         console.log(error.message);
       });
+    },
+    downvoteRequest(id) {
+      const downvote = firebase.functions().httpsCallable("downvote");
+      downvote({ id }).catch(error => {
+        console.log(error.message);
+      });
     }
   },
+
   mounted() {
     const ref = firebase
       .firestore()

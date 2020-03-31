@@ -151,6 +151,10 @@
             <span class="votes" style="font-size: 20px;">{{ request.upvotes }}Likes</span> 
             <i class="material-icons upvote" v-on:click="upvoteRequest(request.id)" style="color:rgb(14, 245, 14); background-color: rgb(107, 104, 104);">arrow_upward</i>
           </div>
+        <div class="downvoteSection">
+            <span class="votes" style="font-size: 20px;">{{ request.downvotes }}Dislikes</span> 
+            <i class="material-icons upvote" v-on:click="downvoteRequest(request.id)" style="color:red; background-color: rgb(107, 104, 104);">arrow_downward</i>
+          </div>
 
         </div>
     <div class="bottomSection">
