@@ -1,7 +1,7 @@
 /* mini reset */
 body {
   margin: 0;
-  background: teal;
+  background: white;
 }
 body,
 h1,
@@ -14,10 +14,12 @@ input {
   text-decoration: none;
 }
 
+
 /* content styles */
 .content {
   max-width: 90%;
   margin: 40px auto 0;
+  margin-top: 5%;
 }
 
 /* api list styles */
@@ -25,7 +27,8 @@ input {
   padding: 1%;
   margin-bottom: 1%;
   list-style-type: none;
-  background: white;
+  background:white;
+  border: 2px solid #00CED1 ;
   border-radius: 10px;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }
@@ -49,4 +52,15 @@ input {
 .api-list .upvote:active {
   color: green;
   background: green;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
 }
