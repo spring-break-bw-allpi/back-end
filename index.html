@@ -1,196 +1,255 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Acme|Baloo+Tamma+2|Handlee|Shadows+Into+Light+Two&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Khand&family=Montserrat:wght@500&family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Acme|Baloo+Tamma+2|Handlee|Shadows+Into+Light+Two&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <title>API Mountain ^/\^/\^</title>
-</head>
+  </head>
 
-<body >
+  <body>
+    <!-- NAVBAR -->
+    <header>
+      <nav class="main-nav z-depth-0 transparent">
+        <div class="wrapper">
+          <ul id="nav" class="nav navbar-nav">
+            <div class="liitems">
+              <li class="lihome">
+                <a href="/index.html" class="black-text">Home</a>
+              </li>
 
-   <!-- NAVBAR -->
-   <header>
-
-
-   <nav class="main-nav z-depth-0 transparent" >
-    
-    <div class="wrapper">
-      
-    
-      <ul id="nav" class="nav navbar-nav">
-       
-        <div class="liitems">
-        
-      
-        <li class="lihome">
-          <a href="/index.html" class="black-text">Home</a>
-        </li>
-        
-        
-          <li class="liaccount logged-in" style="display: none;">
-            <a href="#" class="black-text modal-trigger" data-target="modal-account">Account</a>
-          </li>
-          <li class="lilogout logged-in" style="display: none;">
-            <a href="#" class="black-text" id="logout">Logout</a>
-          </li>
-          <li class="linewapi logged-in" style="display: none;">
-            <a href="#" class="black-text modal-trigger" data-target="modal-create">New API entry</a>
-          </li>
-          <li class="lilogin logged-out" style="display: none;">
-            <a href="#" class="black-text modal-trigger" data-target="modal-login">Login</a>
-          </li>
-          <li class="lisignup logged-out" style="display: none;">
-            <a href="#" class="black-text modal-trigger" data-target="modal-signup">Sign up</a>
-          </li>
-          </div>
-        <img src="images\apipic.png" class="apipic" alt="api mountain">
-      </ul>
-
-    </div>
-
-
-  </nav>
-
-
-</header>
-
-
-
-
+              <li class="liaccount logged-in" style="display: none;">
+                <a
+                  href="#"
+                  class="black-text modal-trigger"
+                  data-target="modal-account"
+                  >Account</a
+                >
+              </li>
+              <li class="lilogout logged-in" style="display: none;">
+                <a href="#" class="black-text" id="logout">Logout</a>
+              </li>
+              <li class="linewapi logged-in" style="display: none;">
+                <a
+                  href="#"
+                  class="black-text modal-trigger"
+                  data-target="modal-create"
+                  >New API entry</a
+                >
+              </li>
+              <li class="lilogin logged-out" style="display: none;">
+                <a
+                  href="#"
+                  class="black-text modal-trigger"
+                  data-target="modal-login"
+                  >Login</a
+                >
+              </li>
+              <li class="lisignup logged-out" style="display: none;">
+                <a
+                  href="#"
+                  class="black-text modal-trigger"
+                  data-target="modal-signup"
+                  >Sign up</a
+                >
+              </li>
+            </div>
+            <img src="images\apipic.png" class="apipic" alt="api mountain" />
+          </ul>
+        </div>
+      </nav>
+    </header>
 
     <!-- SIGN UP MODAL -->
-    <div id="modal-signup" class="modal transparent z-depth-5"  style="border: 1px white solid; padding: 1%;">
-        <div class="modal-content">
-            <h4 style="color:white;">Sign up</h4><br />
-            <form id="signup-form">
-                <div class="input-field">
-                    <input type="email" id="signup-email" required />
-                    <label for="signup-email">Email address</label>
-                </div>
-                <div class="input-field">
-                    <input type="text" id="username" required />
-                    <label for="username">Enter Username</label>
-                </div>
-                <div class="input-field">
-                    <input type="password" id="signup-password" required />
-                    <label for="signup-password">Choose password</label>
-                </div>
-                <div class="input-field">
-                    <input type="text" id="signup-bio" required />
-                    <label for="signup-bio">One Line Bio</label>
-                </div>
-                <button class="btn blue darken-2 z-depth-0">Sign up</button>
-                <p class="error pink-text center-align"></p>
-            </form>
-        </div>
+    <div
+      id="modal-signup"
+      class="modal grey lighten-1 z-depth-5"
+      style="border: 1px white solid; padding: 1%;"
+    >
+      <div class="modal-content">
+        <h4 style="color:white;">Sign up</h4>
+        <br />
+        <form id="signup-form">
+          <div class="input-field">
+            <input type="email" id="signup-email" required />
+            <label for="signup-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="text" id="username" required />
+            <label for="username">Enter Username</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="signup-password" required />
+            <label for="signup-password">Choose password</label>
+          </div>
+          <div class="input-field">
+            <input type="text" id="signup-bio" required />
+            <label for="signup-bio">One Line Bio</label>
+          </div>
+          <button class="btn  z-depth-0">Sign up</button>
+          <p class="error pink-text center-align"></p>
+        </form>
+      </div>
     </div>
 
     <!-- LOGIN MODAL -->
-    <div id="modal-login" class="modal transparent z-depth-5"  style="border: 1px white solid; padding: 1%;">
-        <div class="modal-content">
-            <h4 style="color:white;">Login</h4><br />
-            <form id="login-form">
-                <div class="input-field">
-                    <input type="email" id="login-email" required />
-                    <label for="login-email">Email address</label>
-                </div>
-                <div class="input-field">
-                    <input type="password" id="login-password" required />
-                    <label for="login-password">Your password</label>
-                </div>
-                <button class="btn blue darken-2 z-depth-0">Login</button>
-            </form>
-        </div>
+    <div
+      id="modal-login"
+      class="modal grey lighten-1  z-depth-5"
+      style="border: 1px white solid; padding: 1%;"
+    >
+      <div class="modal-content">
+        <h4 style="color:white;">Login</h4>
+        <br />
+        <form id="login-form">
+          <div class="input-field">
+            <input type="email" id="login-email" required />
+            <label for="login-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="login-password" required />
+            <label for="login-password">Your password</label>
+          </div>
+          <button class="btn  z-depth-0">Login</button>
+        </form>
+      </div>
     </div>
 
     <!-- ACCOUNT MODAL -->
-    <div id="modal-account" class="modal transparent z-depth-5"  style="border: 1px white solid; padding: 1%;">
-        <div class="modal-content center-align white-text">
-            <h4>Account details</h4><br />
-            <div class="account-details"></div>
-        </div>
+    <div
+      id="modal-account"
+      class="modal grey  z-depth-5"
+      style="border: 1px white solid; padding: 1%;"
+    >
+      <div class="modal-content center-align white-text">
+        <h4>Account details</h4>
+        <br />
+        <div class="account-details"></div>
+      </div>
     </div>
 
     <!-- CREATE API MODAL -->
     <div id="modal-create" class="modal">
-        <div class="modal-content blue lighten-4 ">
-            <h4>Create New API Entry</h4><br />
-            <form id="create-form">
-                <h5>API Name </h5>
-                <div class="input-field ">
-                    <input type="text" id="title" required>
-                    <label for="title">A simplified API name or description</label>
-                </div>
-                <div class="input-field ">
-                    <input type="text" id="address" required>
-                    <label for="address">Please paste the  URL for the api</label>
-                </div>
-                <div class="input-field ">
-                    <input type="text" id="access" required>
-                    <label for="access">What kind of access does it have? Free? Free with registration? Paid?</label>
-                </div>
-                <div class="input-field ">
-                    <input type="text" id="instructions" required>
-                    <label for="access">Any special instructions or comments for using this API?</label>
-                </div>
-                                 <div class="input-field" style="display:none;">
-                                     <input type="number" id="likes" placeholder="1">
-                                 </div>             
-                
-                <button class="btn red darken-2 z-depth-0">Create</button>
-            </form>
-        </div>
+      <div class="modal-content grey lighten-1 ">
+        <h4>Create New API Entry</h4>
+        <br />
+        <form id="create-form">
+          <div class="input-field ">
+            <input type="text" id="title" required />
+            <label for="title">A simplified API name or description</label>
+          </div>
+          <div class="input-field ">
+            <input type="text" id="address" required />
+            <label for="address">Please paste the URL for the api</label>
+          </div>
+          <div class="input-field ">
+            <input type="text" id="access" required />
+            <label for="access"
+              >What kind of access does it have? Free? Free with registration?
+              Paid?</label
+            >
+          </div>
+          <div class="input-field ">
+            <input type="text" id="instructions" required />
+            <label for="access"
+              >Any special instructions or comments for using this API?</label
+            >
+          </div>
+          <div class="input-field" style="display:none;">
+            <input type="number" id="likes" placeholder="1" />
+          </div>
+
+          <button class="btn z-depth-0">Create</button>
+        </form>
+      </div>
     </div>
-<!-- API list -->
-<section class="content" id="app">
-    <h2>API LIST</h2>
-    <ul class="api-list"> 
-      <li v-for="request in requests">
-         
+    <!-- API list -->
+    <section class="content" id="app">
+      <div class="searchBar">
+        <label for="search">Search API</label>
+        <input type="text" v-model="search" placeholder="search" />
+      </div>
+      <ul class="api-list">
+        <li v-for="request in filteredApis">
           <div class="titleSection">
-
-        <span class="text">Name: {{ request.title }}</span>
-
-        <div class="upvoteSection">
-            <span class="votes" style="font-size: 20px;">{{ request.upvotes }}Likes</span> 
-            <i class="material-icons upvote" v-on:click="upvoteRequest(request.id)" style="color:rgb(14, 245, 14); background-color: rgb(107, 104, 104);">arrow_upward</i>
+            <div class="nameHeader">
+              <span class="text">Name: {{ request.title }}</span>
+            </div>
+            <div class="upvoteSection">
+              <div class="likeAlign">
+                <span class="votes" style="font-size: 20px;"
+                  >{{ request.upvotes }}
+                </span>
+                <i
+                  class="material-icons upvote"
+                  v-on:click="upvoteRequest(request.id)"
+                  style="color:rgb(14, 245, 14); background-color: rgb(107, 104, 104);"
+                  >arrow_upward</i
+                >
+              </div>
+            </div>
           </div>
-        <div class="downvoteSection">
-            <span class="votes" style="font-size: 20px;">{{ request.downvotes }}Dislikes</span> 
-            <i class="material-icons upvote" v-on:click="downvoteRequest(request.id)" style="color:red; background-color: rgb(107, 104, 104);">arrow_downward</i>
+          <div class="bottomSection">
+            <a v-bind:href="request.address" target="_blank"
+              >{{request.address}}</a
+            >
+            <span class="access">Access: {{ request.access}}</span>
+
+            <div class="dislikeAlign">
+              <span class="instructions">Notes: {{ request.instructions}}</span>
+              <div class="likeAlign">
+                <span class="votes" style="font-size: 20px;"
+                  >{{ request.downvotes }}</span
+                >
+
+                <i
+                  class="material-icons upvote"
+                  v-on:click="downvoteRequest(request.id)"
+                  style="color:red; background-color: rgb(107, 104, 104);"
+                  >arrow_downward</i
+                >
+              </div>
+            </div>
           </div>
-
-        </div>
-    <div class="bottomSection">
-
-        <p>{{request.address}}</p>
-        <span class="access">Access: {{ request.access}}</span>
-        <span class="instructions">Notes: {{ request.instructions}}</span>
+        </li>
+      </ul>
+    </section>
+    <!-- ADMIN ACTIONS -->
+    <div class="adminForm">
+      <form
+        class="adminForm center-align admin-actions admin"
+        style="margin-left: 25%; margin-bottom: 2%; max-width: 300px; display: none;"
+      >
+        <input
+          type="email"
+          placeholder="User email"
+          id="admin-email"
+          required
+        />
+        <button class="btn-small red darken-2 z-depth-0">Make admin</button>
+      </form>
     </div>
-      </li>
-    </ul>
-  </section>
-   <!-- ADMIN ACTIONS -->
-   <div class="adminForm">
-    <form class="adminForm center-align admin-actions admin" style="margin-left: 25%; margin-bottom: 2%; max-width: 300px; display: none;">
-      <input type="email" placeholder="User email" id="admin-email" required />
-      <button class="btn-small red darken-2 z-depth-0">Make admin</button>
-    </form>
-  </div>
 
+    <!--  VUE INFO BELOW  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
-  <!--  VUE INFO BELOW  -->
-  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-
-
-  
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-app.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -201,56 +260,49 @@
     <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-functions.js"></script>
 
     <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyCiSQR30E0xGyWaiQg2biHFemApoe7lZzU",
-      authDomain: "apimountain-c959a.firebaseapp.com",
-      databaseURL: "https://apimountain-c959a.firebaseio.com",
-      projectId: "apimountain-c959a",
-      storageBucket: "apimountain-c959a.appspot.com",
-      messagingSenderId: "725878927812",
-      appId: "1:725878927812:web:fa81d68a77429a0c313491",
-      measurementId: "G-97ZHKB8EQ5"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        // ^^^^^^ might be a problem ^^^^^^
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCiSQR30E0xGyWaiQg2biHFemApoe7lZzU",
+        authDomain: "apimountain-c959a.firebaseapp.com",
+        databaseURL: "https://apimountain-c959a.firebaseio.com",
+        projectId: "apimountain-c959a",
+        storageBucket: "apimountain-c959a.appspot.com",
+        messagingSenderId: "725878927812",
+        appId: "1:725878927812:web:fa81d68a77429a0c313491",
+        measurementId: "G-97ZHKB8EQ5"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      // ^^^^^^ might be a problem ^^^^^^
 
-        // firebase.analytics();
-        // make auth and firestore references
-        const auth = firebase.auth();
-        const db = firebase.firestore()
-        const functions = firebase.functions();
+      // firebase.analytics();
+      // make auth and firestore references
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+      const functions = firebase.functions();
 
-        // update firestore settings
-
-
-
-
+      // update firestore settings
     </script>
-
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="auth.js"></script>
     <script src="./index.js"></script>
-    
-</body>
-
+  </body>
 </html>
 <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyCiSQR30E0xGyWaiQg2biHFemApoe7lZzU",
-      authDomain: "apimountain-c959a.firebaseapp.com",
-      databaseURL: "https://apimountain-c959a.firebaseio.com",
-      projectId: "apimountain-c959a",
-      storageBucket: "apimountain-c959a.appspot.com",
-      messagingSenderId: "725878927812",
-      appId: "1:725878927812:web:fa81d68a77429a0c313491",
-      measurementId: "G-97ZHKB8EQ5"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCiSQR30E0xGyWaiQg2biHFemApoe7lZzU",
+    authDomain: "apimountain-c959a.firebaseapp.com",
+    databaseURL: "https://apimountain-c959a.firebaseio.com",
+    projectId: "apimountain-c959a",
+    storageBucket: "apimountain-c959a.appspot.com",
+    messagingSenderId: "725878927812",
+    appId: "1:725878927812:web:fa81d68a77429a0c313491",
+    measurementId: "G-97ZHKB8EQ5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>

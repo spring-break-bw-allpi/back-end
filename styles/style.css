@@ -1,3 +1,8 @@
+/* Font Reference */
+/* font-family: 'Roboto', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Khand', sans-serif; */
+
 /* mini reset */
 body {
   margin: 0;
@@ -14,7 +19,6 @@ input {
   text-decoration: none;
 }
 
-
 /* content styles */
 .content {
   max-width: 90%;
@@ -27,8 +31,8 @@ input {
   padding: 1%;
   margin-bottom: 1%;
   list-style-type: none;
-  background:white;
-  border: 2px solid #00CED1 ;
+  background: white;
+  border: 2px solid #00ced1;
   border-radius: 10px;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }
@@ -54,13 +58,76 @@ input {
   background: green;
 }
 
+/*  Nav Styling  */
+
 .main-nav ul {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  background-color: rgba(224, 222, 222, 0.808);
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
 }
 
-h2 {
+/*  Search Bar Styling  */
+.searchBar {
+  width: 60%;
+  margin: 0 auto;
+  /* border: 2px rgba(128, 128, 128, 0.616) solid; */
+  padding: 2%;
+  border-radius: 10px;
+}
+
+/*  Content Styling */
+.content h2 {
+  margin-top: 10%;
+}
+.nameHeader {
+  font-size: 1.2em;
+}
+.content {
+  margin-top: 10%;
+  font-family: "Roboto", sans-serif;
+}
+
+/*  Styling Within the Forms  */
+
+#modal-signup label,
+#modal-login label,
+#modal-create label {
+  color: white;
+}
+#modal-login button,
+#modal-signup button {
+  background-color: teal;
+}
+#modal-create h4 {
+  color: white;
+}
+
+.upvoteSection {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+.dislikeAlign {
+  display: flex;
+  justify-content: space-between;
+}
+.apiPic {
+  margin-top: 1%;
+  width: 20%;
+  height: 20%;
+  margin-left: 2%;
+}
+.api-list a {
+  color: #00ced1;
+}
+.searchBar label {
+  font-size: 20px;
+}
+body {
+  background-color: rgb(245, 244, 244);
 }
