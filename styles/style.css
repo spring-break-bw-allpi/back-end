@@ -50,3 +50,8 @@ input {
   color: green;
   background: green;
 }
+
+.main-nav ul {
+  display: flex;
+  flex-direction: row-reverse;
+}
