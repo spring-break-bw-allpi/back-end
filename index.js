@@ -9,6 +9,7 @@ const adminItems = document.querySelectorAll(".admin");
 var app = new Vue({
   el: "#app",
   data: {
+    search: "",
     requests: []
   },
   methods: {
@@ -39,8 +40,17 @@ var app = new Vue({
       });
       this.requests = requests;
     });
+  },
+
+  computed: {
+    filteredList() {
+      return this.apis.requests.filter(post => {
+        return post.title.toLowerCase().includes(this.search.toLowerCase());
+      });
+    }
   }
 });
+
 //
 
 const setupUI = user => {
