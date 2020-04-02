@@ -9,8 +9,8 @@ const adminItems = document.querySelectorAll(".admin");
 var app = new Vue({
   el: "#app",
   data: {
-    search: "",
-    requests: []
+    requests: [],
+    search: ""
   },
   methods: {
     upvoteRequest(id) {
@@ -41,11 +41,10 @@ var app = new Vue({
       this.requests = requests;
     });
   },
-
   computed: {
-    filteredList() {
-      return this.apis.requests.filter(post => {
-        return post.title.toLowerCase().includes(this.search.toLowerCase());
+    filteredApis: function() {
+      return this.requests.filter(apis => {
+        return apis.title.toLowerCase().includes(this.search.toLowerCase());
       });
     }
   }
